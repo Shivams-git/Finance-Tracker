@@ -1,0 +1,138 @@
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  background: var(--bg2);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* Top brand area */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 24px 20px;
+}
+
+.navbar-logo {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.navbar-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.navbar-tagline { display: none; }
+
+/* Nav sections */
+.navbar-section {
+  padding: 12px 12px 0;
+}
+
+.navbar-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 0 12px;
+  margin-bottom: 4px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  padding: 12px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 14px;
+  border-radius: var(--r);
+  color: var(--text3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.1s ease;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--card);
+}
+
+.nav-link.active {
+  color: var(--text);
+  background: var(--card);
+}
+
+.nav-link.active .nav-icon {
+  color: var(--accent);
+}
+
+.nav-icon {
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.1s;
+}
+
+.nav-label { flex: 1; }
+
+/* Divider */
+.navbar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 24px;
+}
+
+/* Footer / User section */
+
+
+
+
+
+.navbar-version { display: none; }
+
+/* Mobile bottom nav */
+@media (max-width: 900px) {
+  .navbar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    background: rgba(18,18,18,0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .navbar-brand,

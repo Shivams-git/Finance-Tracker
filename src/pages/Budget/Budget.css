@@ -1,0 +1,99 @@
+.budget-page-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Conversion box */
+.conversion-results {
+  background: var(--card2);
+  border-radius: var(--r);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.conversion-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conv-label { font-size: 0.82rem; color: var(--text2); }
+.conv-val { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; }
+
+.conv-rate {
+  font-size: 0.7rem;
+  color: var(--text3);
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* Category breakdown */
+.category-breakdown { display: flex; flex-direction: column; gap: 16px; }
+
+.category-row { display: flex; flex-direction: column; gap: 8px; }
+
+.category-row-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-row-name { font-size: 0.875rem; font-weight: 600; }
+.category-row-amount {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.category-bar-bg {
+  height: 3px;
+  background: var(--card3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.category-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Summary grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.summary-item {
+  background: var(--card2);
+  border-radius: var(--r);
+  padding: 16px;
+}
+
+.summary-label {
+  font-size: 0.68rem;
+  color: var(--text3);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.summary-val {
+  font-family: var(--font-mono) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 900px) { .budget-page-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,85 @@
+.add-tx-page { max-width: 640px; }
+
+/* Type toggle — pill style like Spotify's active state */
+.type-switcher {
+  display: inline-flex;
+  gap: 0;
+  background: var(--card2);
+  border-radius: 500px;
+  padding: 4px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+
+.type-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 28px;
+  border-radius: 500px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text3);
+  transition: all 0.15s;
+  text-transform: uppercase;
+}
+
+.type-option input { display: none; }
+.type-option:hover { color: var(--text); }
+
+.type-option.active-expense {
+  background: var(--red);
+  color: #fff;
+}
+
+.type-option.active-income {
+  background: var(--accent);
+  color: #000;
+}
+
+/* Form card */
+.add-tx-card {
+  background: var(--card);
+  border-radius: var(--r3);
+  padding: 36px;
+  border: 1px solid var(--border);
+}
+
+.add-tx-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* Recurring checkbox */
+.recurring-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  padding: 16px;
+  background: var(--card2);
+  border: 2px solid transparent;
+  border-radius: var(--r2);
+  transition: all 0.15s;
+}
+
+.recurring-check:hover { background: var(--card3); border-color: var(--border2); }
+
+.recurring-check input {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+
+.recurring-check-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}

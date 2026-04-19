@@ -1,0 +1,137 @@
+.tx-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--r2);
+  transition: background 0.1s;
+  cursor: default;
+  position: relative;
+}
+
+.tx-card:hover { background: var(--card2); }
+.tx-card:hover .tx-actions { opacity: 1; }
+
+/* No border by default — Spotify rows have no borders */
+.tx-card.tx-recurring { background: rgba(240,165,0,0.04); }
+
+.tx-color-bar { display: none; }
+
+.tx-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+}
+
+.tx-info { flex: 1; min-width: 0; }
+
+.tx-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.tx-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.tx-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.tx-dot { color: var(--text4); font-size: 0.6rem; }
+
+.tx-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: var(--text3);
+}
+
+.tx-date { font-size: 0.78rem; color: var(--text3); }
+
+.tx-notes {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+
+/* Right side */
+.tx-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.tx-amount {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+
+/* Actions appear on hover */
+.tx-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.tx-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: all 0.1s;
+}
+
+.tx-btn:hover { background: var(--card3); color: var(--text); }
+.tx-btn-danger:hover { background: var(--red-dim); color: var(--red); }
+
+/* Separator line between cards — Spotify uses thin dividers */
+.tx-card + .tx-card {
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.tx-card:first-child { border-radius: var(--r2) var(--r2) 0 0; }
+.tx-card:last-child  { border-radius: 0 0 var(--r2) var(--r2); }
+.tx-card:only-child  { border-radius: var(--r2); }
+
+@media (max-width: 600px) {
+  .tx-actions { opacity: 1; }
+  .tx-notes, .tx-dot:last-of-type { display: none; }
+}

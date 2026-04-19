@@ -1,0 +1,27 @@
+.filters {
+  background: var(--card);
+  border-radius: var(--r2);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-row + .filter-row { margin-top: 12px; }
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 130px;
+}
+
+.filter-reset {
+  justify-content: flex-end;
+}

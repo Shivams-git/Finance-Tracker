@@ -1,0 +1,165 @@
+/* Hero banner — like Spotify's gradient header */
+.dashboard-hero {
+  background: linear-gradient(135deg, #2d1b69 0%, #1a0f3e 35%, #0f0a24 65%, #000000 100%);
+  border-radius: var(--r3);
+  padding: 40px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-hero::before {
+  content: '';
+  position: absolute;
+  
+  
+  background: radial-gradient(circle, rgba(138,92,246,0.35) 0%, transparent 65%); top: -80px; left: -40px; width: 320px; height: 320px;
+  pointer-events: none;
+}
+
+.hero-greeting {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.hero-balance-label {
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.hero-balance {
+  font-family: var(--font-mono);
+  font-size: 3.4rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.hero-balance.positive { color: var(--green); }
+.hero-balance.negative { color: var(--red); }
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-stat-item {}
+
+.hero-stat-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.hero-stat-val {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Dashboard two-column */
+.dashboard-body {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Transaction list in card */
+.tx-list-card {
+  background: var(--card);
+  border-radius: var(--r2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.tx-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tx-list-body { padding: 8px; }
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text2);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  transition: color 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+.view-all-link:hover { color: var(--text); }
+
+/* Right sidebar cards */
+.dashboard-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+/* Recurring */
+.recurring-list { display: flex; flex-direction: column; }
+
+.recurring-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.recurring-item:last-child { border-bottom: none; }
+
+.recurring-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.recurring-freq {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+.recurring-amount {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-body { grid-template-columns: 1fr; }
+  .dashboard-sidebar { order: -1; }
+  .dashboard-hero { padding: 28px; }
+  .hero-balance { font-size: 2.6rem; }
+}
+
+/* Extra violet glow overlay on hero */
+.dashboard-hero-glow {
+  position: absolute;
+  bottom: -50px; right: -30px;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
